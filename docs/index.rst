@@ -1,15 +1,18 @@
-.. neodjango documentation master file, created by
-   sphinx-quickstart on Thu Dec 24 16:20:18 2015.
+.. Read the Docs Template documentation master file, created by
+   sphinx-quickstart on Tue Aug 26 14:19:49 2014.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to neodjango's documentation!
-=====================================
+Welcome to Read the Docs Template's documentation!
+==================================================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
+   :glob:
+
+   *
 
 
 
