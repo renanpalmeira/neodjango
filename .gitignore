@@ -7,8 +7,10 @@ share/
 lib/
 build/
 dist/
-*.egg-info/
 virtualenv
+*.egg-info
+*.pot
+*.py[co]
 *.pyc
 *.swp
 *.swo
