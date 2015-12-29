@@ -14,11 +14,10 @@ def URLConnection():
 			raise Exception("NEO4J_DATABASES is not configured correctly in settings.py. Read more: http://goo.gl/TnbmHo/")
 		
 		_default = _settings.NEO4J_DATABASES['default']
-		_default_dir = dir(_default)
-
-		if not 'HOST' in _default_dir \
-			and not 'PORT' in _default_dir \
-			and not 'ENDPOINT' in _default_dir:
+		
+		if not 'HOST' in _default \
+			and not 'PORT' in _default \
+			and not 'ENDPOINT' in _default:
 			raise Exception("NEO4J_DATABASES is not configured correctly in settings.py. Read more: http://goo.gl/TnbmHo/")
 
 		protocol = "http"
