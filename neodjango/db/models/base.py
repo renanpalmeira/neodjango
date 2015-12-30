@@ -10,9 +10,8 @@ class ModelBase(type):
 
 		module = attrs.pop('__module__')
 		new_class = super_class(cls, name, bases, {'__module__': module})
-		new_class.add_to_class(cls, 'objects', Manager())
-		new_class.add_to_class(Manager, 'model', name)
-
+		new_class.add_to_class(cls, 'objects', Manager(name))
+		
 		return super_class(cls, name, bases, attrs)
 
 	def add_to_class(self, cls, name, value):
