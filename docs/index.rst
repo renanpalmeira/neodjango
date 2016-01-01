@@ -1,5 +1,5 @@
 NeoDjango
-==================================================
+=========
 
 Integrating your Django project with the all features of Neo4j.
 
@@ -20,7 +20,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :glob:
-   
+
    *
 
 
