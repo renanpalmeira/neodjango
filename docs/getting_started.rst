@@ -6,10 +6,10 @@ Installation
 
 * Install NeoDjango with your favorite Python package manager:
 	
-	pip install neodjango
+	$ pip install neodjango
 
 * Downloaded and run Neo4j 
-	
+	 
 	- http://neo4j.com/download/
 	- http://neo4j.com/docs/stable/server-installation.html
 
@@ -29,9 +29,9 @@ An example settings.py::
 	)
 
    	NEO4J_DATABASES = {
-	        'default' : {
-	            'HOST':'localhost',
-	            'PORT':7474,
-	            'ENDPOINT':'/db/data'
-	        }
-	    }
+		'default' : {
+			'HOST':'localhost',
+			'PORT':7474,
+			'ENDPOINT':'/db/data'
+		}
+	}
