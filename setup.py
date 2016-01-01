@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='neodjango',
-    version='0.0.3',
+    version='0.0.4',
     author='Renan Palmeira',
     author_email='renanpalmeira1@hotmail.com',
     description='A Django/Neo4j ORM layer.',
