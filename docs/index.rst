@@ -1,17 +1,25 @@
-.. Read the Docs Template documentation master file, created by
-   sphinx-quickstart on Tue Aug 26 14:19:49 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to Read the Docs Template's documentation!
+NeoDjango
 ==================================================
+
+Integrating your Django project with the all features of Neo4j.
+
+Why Django?
+===========
+
+	- https://www.djangoproject.com/start/overview/
+	- http://blog.teamtreehouse.com/choose-django
+
+Why Neo4j?
+==========
+	
+	- http://neo4j.com/top-ten-reasons/
+	- http://www.infoq.com/articles/full-stack-web-development-using-neo4j
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
    :glob:
-
    *
 
 
