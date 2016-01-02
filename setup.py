@@ -16,7 +16,7 @@ setup(
     long_description = open('README.md').read(),
     install_requires = [
         'neo4jrestclient>=2.1',
-        'Django',
+        'Django>=1.6'
         'requests',
         'six',
         'wsgiref',
