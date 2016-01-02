@@ -30,15 +30,14 @@ class NodeQuerySet(object):
 		self.node = node
 
 	def __getattr__(self, name, *args, **kwargs):
-		if name == 'relationships':
+		if name in self.node.properties:
+			return self.node.properties[name]
+		else:
 			name = self.RELATIONSHIP_TEXT(name)
 			def wrapper(*args, **kwargs):
-				if len(args)>=0:
-					return None
-				return RelationshipQuerySet()
+				relationships = self.node.relationships.all(types=[name])
+				return [NodeRelationshipQuerySet(relationship) for relationship in relationships]
 			return wrapper
-		else:
-			return self.node.properties[name]
 
 	def __len__(self):
 		return 1
