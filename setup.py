@@ -4,7 +4,7 @@ EXCLUDE_FROM_PACKAGES = ['neodjango.test', ]
 
 setup(
     name = 'neodjango',
-    version = '0.0.7',
+    version = '0.0.8',
     author ='Renan Palmeira',
     author_email ='renanpalmeira1@hotmail.com',
     description ='A Django/Neo4j ORM layer.',
@@ -16,7 +16,7 @@ setup(
     long_description = open('README.md').read(),
     install_requires = [
         'neo4jrestclient>=2.1',
-        'Django>=1.6'
+        'Django>=1.6',
         'requests',
         'six',
         'wsgiref',

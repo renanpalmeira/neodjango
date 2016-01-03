@@ -8,6 +8,10 @@ lib/
 build/
 dist/
 virtualenv
+*.ipr
+.shell_history
+*.iml
+*.iws
 *.egg-info
 *.pot
 *.py[co]
@@ -26,3 +30,7 @@ virtualenv
 .pypirc
 .project
 .env
+.idea
+.iws
+.iml
+target
