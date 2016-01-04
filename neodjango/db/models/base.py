@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from six import with_metaclass
 
+import signals
 from manager import Manager
 from options import Options
 
@@ -24,7 +25,7 @@ class ModelBase(type):
 			meta = getattr(new_class, 'Meta', None)
 		else:
 			meta = attr_meta
-        
+
 		new_class.add_to_class('_meta', Options(meta))	
 		new_class.add_to_class('objects', Manager())
 
@@ -37,4 +38,6 @@ class ModelBase(type):
 			setattr(cls, name, value)
 		
 class Node(with_metaclass(ModelBase)):
-	pass
+	def __init__(self, *args, **kwargs):
+		super(Node, self).__init__(*args, **kwargs)
+		signals.pre_node_init.send(sender=self.__class__, instance=self)
