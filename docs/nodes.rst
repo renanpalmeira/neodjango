@@ -33,3 +33,9 @@ Querying
 
 	>>> Label.objects.get(id=42)
 	<Node#id: property>
+
+* Retrieving all relationships of objects
+
+	>>> Label.objects.get(name='Ken Thompson').relationships()
+
+	>>> Label.objects.get(name='Emil Eifrem').Created()
