@@ -82,6 +82,9 @@ class QuerySet(object):
 	def _node_all(self):
 		return self._node_filter()
 
+	def _insert(self):
+		pass
+
 	def filter(self, **kwargs):
 		return self._node_filter(**kwargs)
 

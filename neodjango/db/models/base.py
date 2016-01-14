@@ -38,6 +38,17 @@ class ModelBase(type):
 			setattr(cls, name, value)
 		
 class Node(with_metaclass(ModelBase)):
+	concrete_fields = []
+
 	def __init__(self, *args, **kwargs):
-		super(Node, self).__init__(*args, **kwargs)
+		super(Node, self).__init__()
+		if kwargs:
+			self.concrete_fields = kwargs
 		signals.pre_node_init.send(sender=self.__class__, instance=self)
+
+	def _base_save(self):
+		signals.post_node_save.send(sender=self.__class__, instance=self)
+
+	def save(self):
+		signals.pre_node_save.send(sender=self.__class__, instance=self)
+		self._base_save()
