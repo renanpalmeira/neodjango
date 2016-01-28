@@ -5,3 +5,12 @@ class Field(object):
 
 class StringProperty(Field):
 	pass
+
+class IntegerProperty(Field):
+	pass
+
+class URLProperty(Field):
+	pass
+
+class FloatProperty(Field):
+	pass
