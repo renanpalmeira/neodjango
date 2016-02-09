@@ -7,7 +7,7 @@ def URLConnection():
 		if not 'NEO4J_DATABASES' in dir(_settings):
 			raise Exception("Not have 'NEO4J_DATABASES' in settings.py. Read more: http://goo.gl/TnbmHo/")
 		
-		if not type(_settings.NEO4J_DATABASES) is dict:
+		if type(_settings.NEO4J_DATABASES) is not dict:
 			raise Exception("NEO4J_DATABASES is not configured correctly in settings.py. Read more: http://goo.gl/TnbmHo/")
 
 		if not 'default' in _settings.NEO4J_DATABASES.keys():

@@ -14,7 +14,7 @@ class Command(BaseCommand):
 		parser.add_argument('-l', '--load', action='store')
 
 	def handle(self, *args, **options):
-		if 'load' in options and not options['load'] is None and os.path.isfile(options['load']):
+		if 'load' in options and options['load'] is not None and os.path.isfile(options['load']):
 			load = options['load']
 			gdb = Connection()
 

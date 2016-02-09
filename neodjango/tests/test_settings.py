@@ -21,6 +21,6 @@ INSTALLED_APPS = (
     'neodjango', 
 )
 
-SECRET_KEY="shutupdjangowe'retryingtotesthere"
+SECRET_KEY = 'test_key'
 
 DEBUG = True

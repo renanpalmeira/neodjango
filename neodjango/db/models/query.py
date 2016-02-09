@@ -19,7 +19,7 @@ class NodeRelationshipQuerySet(object):
 		raise KeyError("Relationship#{0} has no property {1}. Read more: http://goo.gl/TnbmHo/".format(self.relationship.id, name))
 
 	@classmethod
-	def _create_relationship(self):
+	def _create_relationship(cls):
 		pass
 
 class NodeQuerySet(object):
@@ -46,7 +46,7 @@ class NodeQuerySet(object):
 		_id_node = self.node.id
 		_display = self.node.url
 		
-		if not self.PROPERTY is None:
+		if self.PROPERTY is not None:
 			_display = self.node.properties[self.PROPERTY].encode('ascii', 'ignore')
 		
 		return '<Node#{0}: {1}>'.format(_id_node, _display)
@@ -60,14 +60,14 @@ class QuerySet(object):
 	def __init__(self, cls_, *args, **kwargs):
 		self.graph = Connection()
 		self.cls_ = cls_
-		if not self.cls_._meta['label'] is None:
+		if self.cls_._meta['label'] is not None:
 			self._nodes_by_labels = self.graph.labels.get(self.cls_._meta['label'])
 			self.label = self.cls_._meta['label']
 		else:
 			self._nodes_by_labels = self.graph.labels.get(self.cls_.__name__)
 			self.label = self.cls_.__name__
 
-		if not self.cls_._meta['display'] is None:
+		if self.cls_._meta['display'] is not None:
 			NodeQuerySet.PROPERTY = self.cls_._meta['display']
 		
 	def _node_filter(self, **kwargs):
