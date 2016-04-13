@@ -36,6 +36,8 @@ class NodeQuerySet(object):
 			name = self.RELATIONSHIP_TEXT(name)
 			def wrapper(*args, **kwargs):
 				relationships = self.node.relationships.all(types=[name])
+				if len(relationships)==1:
+					return NodeRelationshipQuerySet(relationships[0])
 				return [NodeRelationshipQuerySet(relationship) for relationship in relationships]
 			return wrapper
 
